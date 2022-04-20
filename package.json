@@ -6,9 +6,21 @@
   "scripts": {
     "test": "jest"
   },
+  "jestJsonReporter": {
+    "outputFile": "./test_result/result.json"
+  },
+  "jest": {
+    "testResultsProcessor": "./node_modules/jest-json-reporter"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jest": "^27.5.1"
+  },
+  
+  
+  "devDependencies": {
+    "jest-json-reporter": "^1.2.2"
   }
+
 }
