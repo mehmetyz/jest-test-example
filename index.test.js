@@ -23,7 +23,7 @@ describe('index.js', () => {
         expect(index.getCapitalizeText('hello world')).toBe('Hello World ');
     });
 
-    it('should return the lowercased word', () => {
+    it('should return the lowercase word', () => {
         expect(index.getLowercaseText('Hello World')).toBe('hello world ');
     });
     
