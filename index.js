@@ -65,26 +65,22 @@ const getLeastRepeatedWord = (str) => {
     return minCountWord;
 }
 
-const getCapitalizedWords = (str) => {
+const getCapitalizeText = (str) => {
     const words = str.split(' ');
-    let capitalizedWords = [];
+    let capitalizedText = '';
     for (let i = 0; i < words.length; i += 1) {
-        if (words[i][0] === words[i][0].toUpperCase()) {
-            capitalizedWords.push(words[i]);
-        }
+        capitalizedText += words[i].charAt(0).toUpperCase() + words[i].slice(1) + ' ';
     }
-    return capitalizedWords;
+    return capitalizedText;
 }
 
-const getLowercaseWords = (str) => {
+const getLowercaseText = (str) => {
     const words = str.split(' ');
-    let lowercaseWords = [];
+    let lowercaseText = '';
     for (let i = 0; i < words.length; i += 1) {
-        if (words[i][0] === words[i][0].toLowerCase()) {
-            lowercaseWords.push(words[i]);
-        }
+        lowercaseText += words[i].toLowerCase() + ' ';
     }
-    return lowercaseWords;
+    return lowercaseText;
 }
 
 
@@ -99,13 +95,13 @@ const getWordsWithLength = (str, length) => {
     return wordsWithLength;
 }
 
-const getReversedWords = (str) => {
+const getReversedText = (str) => {
     const words = str.split(' ');
-    let reversedWords = [];
-    for (let i = 0; i < words.length; i += 1) {
-        reversedWords.push(words[i].split('').reverse().join(''));
+    let reversedText = '';
+    for (let i = words.length - 1; i >= 0; i -= 1) {
+        reversedText += words[i] + ' ';
     }
-    return reversedWords.join(' ');
+    return reversedText;
 }
 
 module.exports = {
@@ -113,8 +109,8 @@ module.exports = {
     getMinLengthWord,
     getMostRepeatedWord,
     getLeastRepeatedWord,
-    getCapitalizedWords,
-    getLowercaseWords,
-    getReversedWords,
+    getCapitalizeText,
+    getLowercaseText,
+    getReversedText,
     getWordsWithLength,
 };
