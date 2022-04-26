@@ -7,6 +7,10 @@
     "test": "jest --ci --reporters=jest-junit --reporters=default"
   },
   
+  "jest-junit": {
+    "outputDirectory": "./report/"
+  },
+  
   "author": "",
   "license": "ISC",
   "dependencies": {
