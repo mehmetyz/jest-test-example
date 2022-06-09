@@ -7,13 +7,18 @@
     "test": "jest --ci --reporters=buildkite-test-collector/jest/reporter"
   },
   "jest": {
-    "reporters":["default", "buildkite-test-collector/jest/reporter"]
-  } ,
+    "reporters": [
+      "default",
+      "buildkite-test-collector/jest/reporter"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "buildkite-test-collector": "^1.0.1",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "node-fetch": "^3.2.6",
+    "selenium-webdriver": "^4.2.0"
   },
   "devDependencies": {
     "jest-json-reporter": "^1.2.2",

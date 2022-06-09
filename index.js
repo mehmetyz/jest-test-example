@@ -1,3 +1,12 @@
+
+
+const https = require('https');
+
+const getGoogle = async () => {
+    const response = await https.get('https://www.google.com');
+    
+    return response;
+}
 const getMaxLengthWord = (str) => {
     const words = str.split(' ');
     let maxLength = 0;
@@ -25,7 +34,7 @@ const getMinLengthWord = (str) => {
 }
 
 
-const sleep = (ms) =>  {
+const sleep = (ms) => {
 
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -122,4 +131,5 @@ module.exports = {
     getLowercaseText,
     getReversedText,
     getWordsWithLength,
+    getGoogle
 };
