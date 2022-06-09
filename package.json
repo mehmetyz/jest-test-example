@@ -4,16 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --ci --reporters=jest-junit --reporters=default"
+    "test": "jest --ci --reporters=buildkite-test-collector/jest/reporter"
   },
-  
-  "jest-junit": {
-    "outputDirectory": "./report/"
-  },
-  
+  "jest": {
+    "reporters":["default", "buildkite-test-collector/jest/reporter"]
+  } ,
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "buildkite-test-collector": "^1.0.1",
     "jest": "^27.5.1"
   },
   "devDependencies": {

@@ -1,13 +1,11 @@
-
-
 const getMaxLengthWord = (str) => {
     const words = str.split(' ');
     let maxLength = 0;
     let maxLengthWord = '';
     for (let i = 0; i < words.length; i += 1) {
         if (words[i].length > maxLength) {
-        maxLength = words[i].length;
-        maxLengthWord = words[i];
+            maxLength = words[i].length;
+            maxLengthWord = words[i];
         }
     }
     return maxLengthWord;
@@ -19,15 +17,21 @@ const getMinLengthWord = (str) => {
     let minLengthWord = words[0];
     for (let i = 0; i < words.length; i += 1) {
         if (words[i].length < minLength) {
-        minLength = words[i].length;
-        minLengthWord = words[i];
+            minLength = words[i].length;
+            minLengthWord = words[i];
         }
     }
     return minLengthWord;
 }
 
 
-const getMostRepeatedWord = (str) => {
+const sleep = (ms) =>  {
+
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const getMostRepeatedWord = async (str) => {
+    await sleep(3000);
     const words = str.split(' ');
     let maxCount = 0;
     let maxCountWord = '';
@@ -47,6 +51,7 @@ const getMostRepeatedWord = (str) => {
 }
 
 const getLeastRepeatedWord = (str) => {
+    sleep(3000);
     const words = str.split(' ');
     let minCount = words.length;
     let minCountWord = '';
@@ -66,6 +71,7 @@ const getLeastRepeatedWord = (str) => {
 }
 
 const getCapitalizeText = (str) => {
+    sleep(3000);
     const words = str.split(' ');
     let capitalizedText = '';
     for (let i = 0; i < words.length; i += 1) {
@@ -75,6 +81,7 @@ const getCapitalizeText = (str) => {
 }
 
 const getLowercaseText = (str) => {
+    sleep(3000);
     const words = str.split(' ');
     let lowercaseText = '';
     for (let i = 0; i < words.length; i += 1) {
@@ -85,6 +92,7 @@ const getLowercaseText = (str) => {
 
 
 const getWordsWithLength = (str, length) => {
+    sleep(3000);
     const words = str.split(' ');
     let wordsWithLength = [];
     for (let i = 0; i < words.length; i += 1) {
@@ -96,6 +104,7 @@ const getWordsWithLength = (str, length) => {
 }
 
 const getReversedText = (str) => {
+    sleep(3000);
     const words = str.split(' ');
     let reversedText = '';
     for (let i = words.length - 1; i >= 0; i -= 1) {

@@ -1,9 +1,11 @@
 
 const index = require('./index');
 
+
 describe('index.js', () => {
     
     it('should return the longest word', () => {
+
         expect(index.getMaxLengthWord('Hello World')).toBe('Hello');
     });
 
@@ -11,12 +13,13 @@ describe('index.js', () => {
         expect(index.getMinLengthWord('Hello World')).toBe('Hello');
     });
 
-    it('should return the most repeated word', () => {
-        expect(index.getMostRepeatedWord('Hello World Hello')).toBe('Hello');
+    it('should return the most repeated word', async () => {
+        
+        expect(await index.getMostRepeatedWord('Hello World Hello')).toBe('Hello');
     });
 
     it('should return the least repeated word', () => {
-        expect(index.getLeastRepeatedWord('Hello World Hello')).toBe('World');
+        expect(index.getLeastRepeatedWord('Hello World Hello')).toBe('orld');
     });
     
     it('should return the capitalized word', () => {
