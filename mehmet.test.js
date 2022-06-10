@@ -30,7 +30,7 @@ describe('mehmet.js', () => {
 
         const driver = new Builder().forBrowser('chrome').build();
         await driver.get('https://www.google.com/');
-        const res = await driver.wait(until.titleIs(' Google'), 1000);
+        const res = await driver.wait(until.titleIs('Google'), 1000);
         await driver.quit();
         
         expect(res).toBe(true);
