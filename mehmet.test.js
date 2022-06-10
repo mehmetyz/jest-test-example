@@ -4,6 +4,38 @@ const index = require('./index');
 const {Builder, Browser, By, Key, until} = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 
+const https = require('https');
+
+const sendHttpRequest = async (url, method, body) => {
+
+    const options = {
+        hostname: 'api.buildkite.com',
+        port: 443,
+        path: url,
+        method: method,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.BUILDKITE_API_TOKEN}`
+        }
+    };
+
+    const req = https.request(options, (res) => {
+        console.log(`statusCode: ${res.statusCode}`);
+        res.on('data', (d) => {
+            console.log(d);
+        });
+    }
+    );
+
+    req.on('error', (error) => {
+        console.error(error);
+    }
+    );
+
+    req.write(body);
+    req.end();
+}
+
 
 describe('mehmet.js', () => {
     
@@ -46,4 +78,20 @@ describe('mehmet.js', () => {
         expect(res).toBe(true);
 
     }, 30000);
+
+
+    it("test-http",  async () => {
+            await sendHttpRequest('/v1/builds', 'POST', JSON.stringify({
+                "build": {
+                    "branch": "master",
+                    "commit": "12345",
+                    "message": "test",
+                    "pull_request": false,
+                    "pull_request_id": null,
+                    "pull_request_number": null,
+                }
+            }));
+            expect(4*4).toBe(16);
+        }
+    );
 });
