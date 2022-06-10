@@ -35,5 +35,5 @@ describe('mehmet.js', () => {
         
         expect(res).toBe(true);
 
-    });
+    }, 30000);
 });
