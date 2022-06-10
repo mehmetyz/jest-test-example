@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --ci --reporters=buildkite-test-collector/jest/reporter"
+    "test": "npm -g install chromedriver --unsafe-perm=true --allow-root && jest --ci --reporters=buildkite-test-collector/jest/reporter"
   },
   "jest": {
     "reporters": [
