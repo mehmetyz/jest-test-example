@@ -2,6 +2,7 @@
 const index = require('./index');
 
 const {Builder, Browser, By, Key, until} = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
 
 
 describe('mehmet.js', () => {
