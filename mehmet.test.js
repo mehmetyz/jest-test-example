@@ -29,7 +29,15 @@ describe('mehmet.js', () => {
 
     it("test-selenium" , async () => {
 
-        const driver = new Builder().forBrowser('chrome').setChromeOptions(new chrome.Options().headless().windowSize({width: 1024, height: 768})).build();
+        const driver = new Builder().forBrowser('chrome').setChromeOptions(new chrome.Options()
+                                .headless()
+                                .addArguments('start-maximized')
+                                .addArguments('disable-infobars')
+                                .addArguments('--disable-extensions')
+                                .addArguments('--disable-gpu')
+                                .addArguments('--disable-dev-shm-usage')
+                                .addArguments('--no-sandbox')
+        ).build();
 
         await driver.get('https://www.google.com/');
         const res = await driver.wait(until.titleIs('Google'), 1000);
