@@ -28,3 +28,4 @@ jobs:
       uses: thundra-io/foresight-test-kit-action@v1
       with:
         api_key: ${{ secrets.foresight_api_key }}
+        test_path: ./junit.xml

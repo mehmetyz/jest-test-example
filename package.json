@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --ci --reporters=default --reporters=jest-junit --outputFile=./test-results.xml"
   },
   "jest": {
     "reporters": [
-      "default"
+      "default",
+      "jest-junit"
     ]
   },
   "author": "",
@@ -16,6 +17,7 @@
   "dependencies": {
     "buildkite-test-collector": "^1.0.1",
     "jest": "^27.5.1",
+    "jest-unit": "0.0.1",
     "node-fetch": "^3.2.6",
     "selenium-webdriver": "^4.2.0"
   },
