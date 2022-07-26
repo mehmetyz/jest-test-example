@@ -24,8 +24,7 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     
-    - name: Foresight Test Report Uploader
-      uses: actions/upload-artifact@v2
+    - name: Analyze Test and/or Coverage Results
+      uses: thundra-io/foresight-test-kit-action@v1
       with:
-        name: test-result-jest
-        path: ./report/
+        api_key: ${{ secrets.foresight_api_key }}

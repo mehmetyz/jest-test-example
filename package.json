@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm -g install chromedriver --unsafe-perm=true --allow-root && jest --ci --reporters=buildkite-test-collector/jest/reporter"
+    "test": "jest"
   },
   "jest": {
     "reporters": [
-      "default",
-      "buildkite-test-collector/jest/reporter"
+      "default"
     ]
   },
   "author": "",

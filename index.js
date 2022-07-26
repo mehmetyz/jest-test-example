@@ -1,12 +1,5 @@
 
 
-const https = require('https');
-
-const getGoogle = async () => {
-    const response = await https.get('https://www.google.com');
-    
-    return response;
-}
 const getMaxLengthWord = (str) => {
     const words = str.split(' ');
     let maxLength = 0;
@@ -130,6 +123,5 @@ module.exports = {
     getCapitalizeText,
     getLowercaseText,
     getReversedText,
-    getWordsWithLength,
-    getGoogle
+    getWordsWithLength
 };
